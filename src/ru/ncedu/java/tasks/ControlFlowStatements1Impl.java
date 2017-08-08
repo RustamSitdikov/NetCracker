@@ -1,5 +1,7 @@
 package ru.ncedu.java.tasks;
 
+import static java.lang.Math.*;
+
 public class ControlFlowStatements1Impl implements ControlFlowStatements1 {
 
     public ControlFlowStatements1Impl() {}
@@ -7,7 +9,7 @@ public class ControlFlowStatements1Impl implements ControlFlowStatements1 {
     @Override
     public float getFunctionValue(float x) {
         if (x > 0) {
-            return (float) (2 * Math.sin(x));
+            return (float) (2 * sin(x));
         } else {
             return 6 - x;
         }

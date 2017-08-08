@@ -3,6 +3,7 @@ package ru.ncedu.java.tasks;
 import java.util.Arrays;
 
 public class ArrayVectorImpl implements ArrayVector {
+
     private double[] array;
 
     public ArrayVectorImpl(){}

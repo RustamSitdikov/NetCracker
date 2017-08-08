@@ -1,5 +1,7 @@
 package ru.ncedu.java.tasks;
 
+import static java.lang.Math.*;
+
 public class ControlFlowStatements3Impl implements ControlFlowStatements3 {
 
     public ControlFlowStatements3Impl() {}
@@ -11,7 +13,7 @@ public class ControlFlowStatements3Impl implements ControlFlowStatements3 {
         } else if (x >= 2) {
             return 4;
         } else {
-            return Math.pow(x, 2);
+            return pow(x, 2);
         }
     }
 
@@ -36,7 +38,7 @@ public class ControlFlowStatements3Impl implements ControlFlowStatements3 {
         long[][] array = new long[8][5];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
-                array[i][j] = (long) Math.pow(Math.abs(i - j), 5);
+                array[i][j] = (long) pow(abs(i - j), 5);
             }
         }
         return array;
@@ -52,7 +54,7 @@ public class ControlFlowStatements3Impl implements ControlFlowStatements3 {
             for (int j = 0; j < array[0].length; j++) {
                 tmp *= array[i][j];
             }
-            tmp = Math.abs(tmp);
+            tmp = abs(tmp);
 
             if (tmp > maximum) {
                 index = i;
