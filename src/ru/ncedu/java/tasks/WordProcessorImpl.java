@@ -65,11 +65,9 @@ public class WordProcessorImpl implements WordProcessor {
      */
     public void setSource(FileInputStream fis) throws IOException {
         if (fis == null) throw new IllegalArgumentException();
-        StringBuilder text = new StringBuilder();
-        while (fis.available() > 0) {
-            text.append((char) fis.read());
-        }
-        setSource(text.toString());
+        byte[] result = new byte[fis.available()];
+        fis.read(result);
+        text = new String(result);
     }
     /**
      * Ищет и возвращает все слова, начинающиеся с указанной последовательности
@@ -84,13 +82,14 @@ public class WordProcessorImpl implements WordProcessor {
      */
     public Set<String> wordsStartWith(String begin) {
         if (text == null) throw new IllegalStateException();
-        Set<String> textSet = new HashSet<String>();
-        if (begin==null) begin = "";
-        String[] words = getText().split("\\s+");
-        for (String word : words){
-            if (word.matches("(?i)" + begin + "\\S*?"))
-                textSet.add(word.toLowerCase());
+        Set<String> set = new HashSet<>();
+
+        for(String word : text.toLowerCase().split("\\s+")) {
+            if(begin == null || begin.length() == 0 || word.startsWith(begin.toLowerCase())){
+                set.add(word);
+            }
         }
-        return textSet;
+
+        return set;
     }
 }
