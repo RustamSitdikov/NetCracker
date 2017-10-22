@@ -5,16 +5,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * ЦЕЛЬ ЗАДАЧИ - разобраться с регулярными выражениями и классами пакета java.util.regex.<br/>
- * <br/>
- * ЗАДАНИЕ<br/>
- * Реализовать проверку корректности имен, допустимых в языке PL/SQL,
- * проверку корректности URLов и e-mail-ов,
- * нахождение соответствий (matches) в строке.<br/>
- *
- * @author Alexey Vasiliev
- */
 public class CheckerImpl implements Checker {
 
     public CheckerImpl(){}
