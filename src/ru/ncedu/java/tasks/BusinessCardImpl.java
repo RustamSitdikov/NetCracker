@@ -6,7 +6,7 @@ import java.util.*;
 
 public class BusinessCardImpl implements BusinessCard {
 
-    private static final String DatePattern = "dd-MM-yyyy";
+    private static final String DATE_PATTERN = "dd-MM-yyyy";
 
     private String name;
     private String lastName;
@@ -98,7 +98,7 @@ public class BusinessCardImpl implements BusinessCard {
 
     public void setBirthDate(String birthDate) throws InputMismatchException {
         try {
-            Date date = new SimpleDateFormat(DatePattern).parse(birthDate);
+            Date date = new SimpleDateFormat(DATE_PATTERN).parse(birthDate);
             this.birthDate.setTime(date);
         } catch (ParseException exception) {
             throw new InputMismatchException("Birth date is incorrect!");
